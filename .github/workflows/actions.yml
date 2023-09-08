@@ -1,0 +1,19 @@
+name: Auto Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+  update:
+    runs-on: ubuntu
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update script
+        run: |
+          git pull origin main
+          # Run your Python script here
